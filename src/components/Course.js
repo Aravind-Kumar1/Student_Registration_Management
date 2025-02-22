@@ -1,21 +1,29 @@
 import React, { useState, useEffect } from "react";
 import "../styles/course.css"; // Import CSS file
 
-const Course = ({ courses, onCoursesChange }) => {
+const Course = () => {
+  const getStoredCourses = () => {
+    const storedCourses = localStorage.getItem("courses");
+    return storedCourses ? JSON.parse(storedCourses) : [];
+  };
+
+  const [courses, setCourses] = useState(getStoredCourses);
   const [newCourse, setNewCourse] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
   const [updatedCourse, setUpdatedCourse] = useState("");
 
+  useEffect(() => {
+    localStorage.setItem("courses", JSON.stringify(courses));
+  }, [courses]);
+
   const handleAddCourse = () => {
     if (newCourse.trim() === "") return;
-    const updatedCourses = [...courses, newCourse];
-    onCoursesChange(updatedCourses);
+    setCourses([...courses, newCourse]);
     setNewCourse("");
   };
 
   const handleDeleteCourse = (index) => {
-    const updatedCourses = courses.filter((_, i) => i !== index);
-    onCoursesChange(updatedCourses);
+    setCourses(courses.filter((_, i) => i !== index));
   };
 
   const handleEditCourse = (index) => {
@@ -25,8 +33,9 @@ const Course = ({ courses, onCoursesChange }) => {
 
   const handleUpdateCourse = () => {
     if (updatedCourse.trim() === "") return;
-    const updatedCourses = courses.map((course, i) => (i === editingIndex ? updatedCourse : course));
-    onCoursesChange(updatedCourses);
+    setCourses(
+      courses.map((course, i) => (i === editingIndex ? updatedCourse : course))
+    );
     setEditingIndex(null);
     setUpdatedCourse("");
   };
