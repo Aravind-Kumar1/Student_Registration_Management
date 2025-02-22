@@ -1,0 +1,129 @@
+.registration-container {
+    max-width: 700px;
+    margin: 130px auto;  /* Pushed container a bit down */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.register-btn {
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #0056b3;
+}
+
+.registration-list-container {
+    max-height: 200px;  /* Fixed height to enable scrolling */
+    overflow-y: auto;   /* Enables vertical scrolling */
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f8f9fa;
+    padding: 10px;
+}
+
+.registration-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Optional: Customize scrollbar */
+.registration-list-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.registration-list-container::-webkit-scrollbar-thumb {
+    background: #007bff;
+    border-radius: 10px;
+}
+
+.registration-list-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.registration-item {
+    display: flex;
+    align-items: center;  /* Align text and button */
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    white-space: nowrap;  /* Ensures text stays in a single line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 8px; /* Reduced padding */
+    border-radius: 5px;
+    margin-left: 10px; /* Creates spacing between text and button */
+    min-width: 30px; /* Keeps button small */
+}
+
+.delete-btn:hover {
+    background: darkred;
+}
+
+.clear-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.clear-btn:hover {
+    background: #b02a37;
+}
+.error-box {
+    background-color: #ffdddd;
+    color: #d8000c;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #d8000c;
+  }
+  
+  .error-text {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  .error-input {
+    border: 2px solid #d8000c !important;
+    background-color: #ffe6e6;
+  }
+  

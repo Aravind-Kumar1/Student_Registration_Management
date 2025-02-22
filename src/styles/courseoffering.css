@@ -1,0 +1,163 @@
+/* General Container */
+.course-offering-container {
+    max-width: 600px;
+    margin: 130px auto;
+    padding: 25px;
+    background: #ffffff;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  /* Form Container */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  select {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  select:hover {
+    border-color: #3498db;
+  }
+  
+  /* Buttons */
+  button {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .add-btn {
+    background: #27ae60;
+    color: white;
+  }
+  
+  .update-btn {
+    background: #f39c12;
+    color: white;
+  }
+  
+  .clear-btn {
+    background: #e74c3c;
+    color: white;
+    margin-top: 15px;
+  }
+  
+  .add-btn:hover {
+    background: #218c53;
+  }
+  
+  .update-btn:hover {
+    background: #e67e22;
+  }
+  
+  .clear-btn:hover {
+    background: #c0392b;
+  }
+  
+  /* Offerings List - Fixed Height to Show Max 10 Items */
+  .offerings-container {
+    max-height: 300px; /* Restricting the height */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background: #f9f9f9;
+  }
+  
+  /* Scrollbar Styling */
+  .offerings-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .offerings-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+  }
+  
+  .offerings-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  /* Offerings List */
+  .offerings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .offerings-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 5px solid #3498db;
+    transition: transform 0.2s ease-in-out;
+    font-size: 14px;
+  }
+  
+  .offerings-list li:hover {
+    transform: translateX(3px);
+  }
+  
+  /* Buttons Inside List */
+  .buttons {
+    display: flex;
+    gap: 6px;
+    margin-left: 8px;
+  }
+  
+  .edit-btn {
+    
+    background: #2980b9;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .delete-btn {
+    background: #c0392b;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  
+  .edit-btn:hover {
+    background: #1f618d;
+  }
+  
+  .delete-btn:hover {
+    background: #a93226;
+  }
+  

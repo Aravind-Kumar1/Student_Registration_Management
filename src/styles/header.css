@@ -1,0 +1,126 @@
+/* Header Styling */
+.header {
+    width: 100%;
+    background: linear-gradient(135deg, #ff8c00, #ff5e62);
+    padding: 30px 0;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  /* Logo */
+  .logo h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .logo h2:hover {
+    transform: scale(1.05);
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Navigation Menu */
+  .nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-menu ul li {
+    display: inline-block;
+  }
+  
+  .nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+  /* Active Link */
+  .nav-menu ul li .active {
+    background: rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+  }
+  
+  /* Mobile Menu Icon */
+  .menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-icon:hover {
+    transform: rotate(90deg);
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .nav-menu {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-top: 2px solid rgba(255, 255, 255, 0.2);
+      display: none;
+      flex-direction: column;
+      text-align: center;
+      padding: 15px 0;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .nav-menu.open {
+      display: flex;
+    }
+  
+    .nav-menu ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  .logo-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .logo-link h2 {
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  /* .logo-link h2:hover {
+    color: #007bff; /* Change color on hover */
+  
