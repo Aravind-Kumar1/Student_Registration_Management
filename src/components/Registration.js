@@ -35,7 +35,7 @@ const Registration = ({ courseOfferings, registrations, setRegistrations }) => {
     setSelectedOffering("");
     setErrors({});
 
-    toast.success("🎉 Successfully registered!", { position: "top-right", autoClose: 3000 });
+    toast.success("Successfully registered!", { position: "top-right", autoClose: 3000 });
   };
 
   const handleDelete = (id) => {
@@ -43,10 +43,10 @@ const Registration = ({ courseOfferings, registrations, setRegistrations }) => {
   };
 
   const handleClearAll = () => {
-    const confirmDelete = window.confirm("🚨 Are you sure you want to clear all registrations?");
+    const confirmDelete = window.confirm("Are you sure you want to clear all registrations?");
     if (confirmDelete) {
       setRegistrations([]);
-      toast.info("🗑️ All registrations cleared!", { position: "top-right", autoClose: 3000 });
+      toast.info("All registrations cleared!", { position: "top-right", autoClose: 3000 });
     }
   };
 
@@ -63,7 +63,7 @@ const Registration = ({ courseOfferings, registrations, setRegistrations }) => {
     <div className="registration-container">
       <ToastContainer />
 
-      <h2>🎓 Student Registration</h2>
+      <h2>Student Registration</h2>
 
       {Object.keys(errors).length > 0 && (
         <div className="error-box">

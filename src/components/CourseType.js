@@ -6,20 +6,17 @@ const CourseType = ({ courseTypes = [], onCourseTypesChange }) => {
   const [editingIndex, setEditingIndex] = useState(null);
   const [editText, setEditText] = useState("");
 
-  // Add a new course type
   const handleAddType = () => {
     if (!newType.trim() || courseTypes.includes(newType)) return;
     onCourseTypesChange([...courseTypes, newType]);
     setNewType("");
   };
 
-  // Start editing a course type
   const handleEditType = (index) => {
     setEditingIndex(index);
     setEditText(courseTypes[index]);
   };
 
-  // Save the updated course type
   const handleSaveEdit = () => {
     if (!editText.trim()) return;
     const updatedTypes = [...courseTypes];
@@ -28,7 +25,6 @@ const CourseType = ({ courseTypes = [], onCourseTypesChange }) => {
     setEditingIndex(null);
   };
 
-  // Delete a course type
   const handleDeleteType = (index) => {
     const filteredTypes = courseTypes.filter((_, i) => i !== index);
     onCourseTypesChange(filteredTypes);
@@ -38,7 +34,6 @@ const CourseType = ({ courseTypes = [], onCourseTypesChange }) => {
     <div className="course-type-container">
       <h2 className="title">Course Types</h2>
 
-      {/* Input for Adding a New Course Type */}
       <div className="input-section">
         <input
           type="text"
@@ -50,7 +45,6 @@ const CourseType = ({ courseTypes = [], onCourseTypesChange }) => {
         <button onClick={handleAddType} className="btn add-btn">Add</button>
       </div>
 
-      {/* Scrollable List of Course Types */}
       <div className="course-list-container">
         {courseTypes.length > 0 ? (
           <ul className="course-list">
@@ -58,10 +52,10 @@ const CourseType = ({ courseTypes = [], onCourseTypesChange }) => {
               <li key={index} className="course-item">
                 {editingIndex === index ? (
                   <div className="edit-mode">
-                    <input 
-                      type="text" 
-                      value={editText} 
-                      onChange={(e) => setEditText(e.target.value)} 
+                    <input
+                      type="text"
+                      value={editText}
+                      onChange={(e) => setEditText(e.target.value)}
                       className="input-field"
                     />
                     <button onClick={handleSaveEdit} className="btn save-btn">Save</button>
@@ -70,8 +64,12 @@ const CourseType = ({ courseTypes = [], onCourseTypesChange }) => {
                   <div className="display-mode">
                     <span className="course-name">{type}</span>
                     <div className="btn-group">
-                      <button onClick={() => handleEditType(index)} className="btn edit-btn">Edit</button>
-                      <button onClick={() => handleDeleteType(index)} className="btn delete-btn">Delete</button>
+                      <button onClick={() => handleEditType(index)} className="btn edit-btn">
+                        Edit
+                      </button>
+                      <button onClick={() => handleDeleteType(index)} className="btn delete-btn">
+                        Delete
+                      </button>
                     </div>
                   </div>
                 )}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../styles/course.css"; // Import CSS file
+import "../styles/course.css"; 
 
 const Course = () => {
   const getStoredCourses = () => {

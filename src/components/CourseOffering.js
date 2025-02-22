@@ -5,12 +5,12 @@ const CourseOffering = ({ courseTypes, courseOfferings, onCourseOfferingsChange 
   const [selectedCourse, setSelectedCourse] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [editingId, setEditingId] = useState(null);
-  const [errorMessage, setErrorMessage] = useState(""); // Validation message
+  const [errorMessage, setErrorMessage] = useState(""); // validating message
 
-  // Add new offering
+  
   const handleAddOffering = () => {
     if (!selectedCourse || !selectedType) {
-      setErrorMessage("⚠️ Please fill all input fields before adding!");
+      setErrorMessage("Please fill all input fields before adding!");
       return;
     }
 
@@ -18,15 +18,15 @@ const CourseOffering = ({ courseTypes, courseOfferings, onCourseOfferingsChange 
     onCourseOfferingsChange((prev) => [...prev, newOffering]);
     setSelectedCourse("");
     setSelectedType("");
-    setErrorMessage(""); // Clear error message on successful addition
+    setErrorMessage(""); 
   };
 
-  // Delete a single offering
+  
   const handleDeleteOffering = (id) => {
     onCourseOfferingsChange((prev) => prev.filter((offering) => offering.id !== id));
   };
 
-  // Clear all offerings with confirmation
+  
   const handleClearAll = () => {
     const confirmDelete = window.confirm("🚨 Are you sure you want to clear all course offerings? This action cannot be undone.");
     if (confirmDelete) {
@@ -34,18 +34,18 @@ const CourseOffering = ({ courseTypes, courseOfferings, onCourseOfferingsChange 
     }
   };
 
-  // Edit an offering
+  
   const handleEditOffering = (offering) => {
     setSelectedCourse(offering.course);
     setSelectedType(offering.type);
     setEditingId(offering.id);
-    setErrorMessage(""); // Clear any previous error message
+    setErrorMessage(""); 
   };
 
   // Update an offering
   const handleUpdateOffering = () => {
     if (!selectedCourse || !selectedType) {
-      setErrorMessage("⚠️ Please fill all input fields before updating!");
+      setErrorMessage("Please fill all input fields before updating!");
       return;
     }
 
@@ -86,7 +86,7 @@ const CourseOffering = ({ courseTypes, courseOfferings, onCourseOfferingsChange 
         )}
       </div>
 
-      {/* Error Message Display */}
+      
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <div className="offerings-container">

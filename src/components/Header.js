@@ -4,9 +4,9 @@ import "../styles/header.css";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation(); // Get current path
+  const location = useLocation(); 
 
-  // Close menu when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isMobileMenuOpen && !event.target.closest(".nav-menu") && !event.target.closest(".menu-icon")) {

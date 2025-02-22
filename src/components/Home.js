@@ -5,14 +5,14 @@ import "../styles/home.css";
 const Home = ({ courseTypes, courses, courseOfferings, registrations }) => {
   return (
     <div className="home">
-      {/* Hero Section */}
+      
       <section className="hero">
         <h1>🎓 Welcome to the Student Registration System</h1>
         <p>Manage courses, offerings, and student registrations in real-time.</p>
         <Link to="/register" className="cta-button">Get Started</Link>
       </section>
 
-      {/* Dashboard Overview */}
+      
       <section className="dashboard">
         <div className="card">Total Course Types: <strong>{courseTypes.length}</strong></div>
         <div className="card">Total Courses: <strong>{courses.length}</strong></div>
