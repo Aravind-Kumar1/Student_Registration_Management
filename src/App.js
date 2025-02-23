@@ -46,21 +46,22 @@ function App() {
       <Header />
       <div className="container">
         <Routes>
-          <Route path="/" element={
-            <Home 
+          <Route 
+            path="/" 
+            element={<Home 
               courseTypes={courseTypes} 
               courses={courses} 
               courseOfferings={courseOfferings} 
               registrations={registrations} 
-            />
-          }/>
+            />} 
+          />
           <Route 
             path="/course-types" 
             element={<CourseType courseTypes={courseTypes} onCourseTypesChange={setCourseTypes} />} 
           />
           <Route 
             path="/courses" 
-            element={<Course courses={courses} onCoursesChange={setCourses} />} 
+            element={<Course courses={courses} setCourses={setCourses} />} 
           />
           <Route 
             path="/course-offerings" 
@@ -76,9 +77,9 @@ function App() {
             path="/register" 
             element={
               <Registration 
-              courseOfferings={courseOfferings} 
-              registrations={registrations} 
-              setRegistrations={setRegistrations}
+                courseOfferings={courseOfferings} 
+                registrations={registrations} 
+                setRegistrations={setRegistrations}
               />
             } 
           />

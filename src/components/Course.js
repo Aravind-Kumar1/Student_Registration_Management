@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";  // Removed useEffect
 import "../styles/course.css"; 
 
-const Course = () => {
-  const getStoredCourses = () => {
-    const storedCourses = localStorage.getItem("courses");
-    return storedCourses ? JSON.parse(storedCourses) : [];
-  };
-
-  const [courses, setCourses] = useState(getStoredCourses);
+const Course = ({ courses, setCourses }) => {
   const [newCourse, setNewCourse] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
   const [updatedCourse, setUpdatedCourse] = useState("");
 
-  useEffect(() => {
-    localStorage.setItem("courses", JSON.stringify(courses));
-  }, [courses]);
-
   const handleAddCourse = () => {
     if (newCourse.trim() === "") return;
-    setCourses([...courses, newCourse]);
+    setCourses([...courses, newCourse]); 
     setNewCourse("");
   };
 
